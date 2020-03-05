@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+/* animation */
+@keyframes animate{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+/* main */
+.shopping-cart {
+    width: 700px;
+    height: auto;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 200px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    height: 60px;
+    border-bottom: 2px solid #EDECEB;
+    text-align: center;
+    padding-top: 10px;
+    color: #887559;
+    font-size: 0.8rem;
+}
+
+#js_shopping_list {
+    width: 100%;
+}
+
+.item {
+    width: 100%;
+    height: 80px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EDECEB;
+}
+
+.is-del {
+    display: none;
+}
+
+.del-btn {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url(../img/icon_del-btn.svg) no-repeat center;
+}
+
+.thumb img {
+    width: 40px;
+    height: 40px;
+}
+
+.text {
+    width: 300px;
+    font-size: 0.8rem;
+}
+
+.price {
+    font-size: 0.9rem;
+    font-family: 'Ovo', serif;
+    text-align: right;
+    letter-spacing: 0.15rem;
+}
+
+.total {
+    width: 100%;
+    height: 80px;
+    padding: 40px 30px;
+    font-size: 0.9rem;
+    font-family: 'Ovo', serif;
+    text-align: right;
+    letter-spacing: 0.15rem;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.btn {
+    width: 220px;
+    height: 40px;
+    font-size: 0.9rem;
+    letter-spacing: 0.15rem;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.buy {
+    border: 1px solid #887559;
+    background-color: #887559;
+    color: #EDECEB;
+    transition: .4s;
+}
+
+.buy:hover {
+    background-color: #EDECEB;
+    border: 1px solid #887559;
+    color: #887559;
+}
+
+/* スマホ */
+@media screen and ( max-width: 560px ) {
+    /* main */
+    main {
+        padding: 20px;
+    }
+
+    .shopping-cart {
+        width: 100%;
+        margin-top: 140px;
+        padding: 20px;
+    }
+
+    .title {
+        height: 80px;
+        padding-top: 25px;
+    }
+
+    .item {
+        height: 100px;
+        padding: 0;
+        position: relative;
+    }
+
+    .icon {
+        width: 10%;
+        padding: 5px;
+    }
+
+    .thumb {
+        width: 20%;
+    }
+
+    .thumb img {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+    }
+
+    .text {
+        width: 45%;
+        line-height: 1.5rem;
+        padding: 10px;
+    }
+
+    .price {
+        padding: 10px;
+        width: 25%;
+        font-size: 0.7rem;
+    }
+
+    .total {
+        padding: 40px 10px;
+    }
+}

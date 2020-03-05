@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+/* main */
+main {
+    width: 100vw;
+}
+
+/* item-area */
+.item-area {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+/* tab-container */
+.tab-container {
+    max-width: 1200px;
+    width: 100%;
+    height: 100px;
+    font-size: 0.8rem;
+    font-family: '0v0', serif;
+    display: flex;
+    justify-content: center;
+}
+
+.tab-container .tab {
+    width: 160px;
+    height: 30px;
+    letter-spacing: 0.1rem;
+    color: #887559;
+    background-color: #EDECEB;
+    border-right: 1px solid #887559;
+    border-top: 1px solid #887559;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+}
+
+.tab-container .newest {
+    border-left: 1px solid #887559;
+}
+
+.tab-container .tab:hover {
+    color: #EDECEB;
+    background-color: #887559;
+}
+
+.tab span {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+/* item-container */
+#item-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    transition: .4s ease-in-out;
+}
+
+.item-block {
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+}
+
+.item-block img {
+    width: 100%;
+    transition: .4s ease-in-out;
+}
+
+.item-block img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.item-box {
+    width: 100%;
+}
+
+.item-box h4 {
+    color: #181818;
+    margin-top: 20px;
+    font-size: 0.75rem;
+}
+
+.item-box p {
+    font-family: 'Ovo', serif;
+    letter-spacing: 0.15rem;
+    line-height: 1.2rem;
+}
+
+img[src="img/uq-01201.png"], img[src="img/uq-01101.png"] {
+    background: url(../img/icon_new-g.svg) no-repeat;
+    background-size: 15%;
+}
+
+/* スマホ */
+@media screen and ( max-width: 560px ) {
+    main {
+        padding: 10px;
+    }
+
+    /* item-area */
+    .item-area {
+        width: 100%;
+    }
+
+    /* tab-container */
+    .tab-container {
+        width: 100%;
+        height: 80px;
+        font-size: 0.4rem;
+        padding: 20px;
+        padding-top: 0;
+    }
+
+    .tab-container .tab {
+        width: 33.33%;
+    }
+
+    .tab span {
+        font-size: 1rem;
+        margin-left: 4px;
+    }
+
+    /* item-container */
+    #item-container {
+        width: 100%;
+    }
+
+    .item-block {
+        width: 50%;
+        text-align: center;
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .item-block img {
+        width: 100%;
+    }
+
+    .item-box {
+        width: 100%;
+    }
+
+    .item-box h4 {
+        margin-top: 10px;
+    }
+
+    .text-block {
+        width: 100%;
+    }
+
+    img[src="img/uq-01201.png"], img[src="img/uq-01101.png"] {
+        background-size: 20%;
+    }
+}

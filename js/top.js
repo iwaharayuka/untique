@@ -1,0 +1,24 @@
+// js外からitemsArrayを読み込む
+var itemsArray = window.itemsLib.items();
+
+// メイン画像をランダム表示
+if (window.matchMedia('(min-width: 560px)').matches){
+  var i = [Math.floor(Math.random() * itemsArray.length)];
+  var mainImg = '<a href="#"><img class="' + itemsArray[i]['no'] + '" src="img/' + itemsArray[i]['img1'] + '" alt=""><figcaption>' + '「' + itemsArray[i]['title'] + '」' + itemsArray[i]['artist'] + ' （' + itemsArray[i]['year'] + '年）</figcaption></a>'
+  $('.fig-area').html(mainImg);
+} else {
+  var i = [Math.floor(Math.random() * itemsArray.length)];
+  var mainImg = '<a href="#"><img class="' + itemsArray[i]['no'] + '" src="img/' + itemsArray[i]['img1'] + '" alt=""><figcaption>' + '「' + itemsArray[i]['title'] + '」' + '<br>' + itemsArray[i]['artist'] + '<br>' + '（' + itemsArray[i]['year'] + '年）</figcaption></a>'
+  $('.fig-area').html(mainImg);
+};
+
+// 要素までスクロールダウン
+$(function(){
+  $('a[href ^= "#"]').click(function(){
+    event.preventDefault();
+    var target = $(this.hash);
+    if(!target.length) return;
+    var targetY = target.offset().top;
+    $('body,html').animate({scrollTop: targetY}, 1300, 'swing');
+  });
+});

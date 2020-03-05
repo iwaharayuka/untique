@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+/*  animation
+--------------------------------*/
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* common */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+    font-family: 'Noto Serif JP', 'Ovo', serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #EDECEB;
+    /* animationの設定 */
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.second-ttl {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    color: #887559;
+    text-align: center;
+    padding-top: 200px;
+    font-family: 'Ovo', serif;
+}
+
+h2 {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    font-family: 'Ovo', serif;
+}
+
+.sub-ttl {
+    font-size: 0.8rem;
+    letter-spacing: 0.25rem;
+    color: #887559;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 80px;
+    font-family: 'Noto Serif JP', serif;
+}
+
+h3 {
+    font-size: 0.85rem;
+    line-height: 1.6rem;
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.15rem;
+}
+
+p {
+    font-size: 0.9rem;
+    color: #181818;
+    line-height: 2rem;
+}
+
+h4 {
+    font-size: 0.6rem;
+    color: #887559;
+    line-height: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline:0;
+}
+
+/* header */
+nav {
+    width: 100vw;
+    height: 80px;
+    background: #EDECEB;
+    border-bottom: 1px solid #887559;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: #887559;
+    font-family: 'Ovo', serif;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    /* animation */
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+nav a:hover {
+    color: #181818;
+    transform: scale(1.1, 1.1)
+}
+
+.nav-list {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list li+ li {
+    height: 60px;
+    border-left: 1px solid #887559;
+}
+
+.nav-list .icon {
+    width: 8.333vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-list .cart .cart-wrapper {
+    width: 30px;
+    position: relative;
+}
+
+.nav-list .cart .cart-wrapper .cart_cnt {
+    position: absolute;
+    top: -6px;
+    left: -12px;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #887559;
+    font-size: 0.8rem;
+    color: #EDECEB;
+}
+
+.nav-list .cart .cart-wrapper a {
+    display: flex;
+    align-items: inherit;
+}
+
+.nav-list .cart .cart-wrapper a img {
+    width: 30px;
+}
+
+.nav-list .nav {
+    width: 16.666vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* footer */
+footer {
+    width: 100vw;
+    height: 80px;
+    border-top: 1px solid #887559;
+    margin-top: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h4 {
+    width: 20vw;
+    color: #887559;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1rem;
+}
+
+small {
+    width: 60vw;
+    color: #887559;
+    font-family: 'Ovo' , serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h4+ small {
+    height: 60px;
+    border-left: 1px solid #887559;
+}
+
+footer small+ h4 {
+    height: 60px;
+    border-left: 1px solid #887559;
+}
+
+footer h4:hover {
+    opacity: 50%;
+}
+
+/* スマホ */
+@media screen and ( max-width: 560px ) {
+    /* common */
+    .second-ttl {
+        padding-top: 140px;
+        font-size: 1.8rem;
+    }
+
+    .sub-ttl {
+        margin-top: 10px;
+        margin-bottom: 80px;
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+    /* header */
+    nav {
+        border-top: none;
+        transform: none;
+        animation: none;
+        position: fixed;
+        top: 0;
+        padding: 10px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+    
+    /* bnav */
+    .bnav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+    }
+
+    .bnav h1 {
+        width: calc(100vw - 160px);
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid #887559;
+        border-left: 1px solid #887559;
+    }
+
+    .bnav .cart-wrapper {
+        width: 30px;
+        position: relative;
+    }
+    
+    .bnav .cart-wrapper .cart_cnt {
+        position: absolute;
+        top: -6px;
+        left: -12px;
+        width: 1.2rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #887559;
+        font-size: 0.8rem;
+        color: #EDECEB;
+    }
+
+    .bnav .bnavbtn img, .bnav .cart-wrapper img {
+        width: 40px;
+    }
+
+    .bnav-menu {
+        width: 100vw;
+        height: calc(100vh - 80px);
+        background: #181818;
+        opacity: 0.85;
+        position: absolute;
+        top: 80px;
+        padding-top: 80px;
+        display: none;
+    }
+
+    .bnav-menu li {
+        text-align: center;
+        padding: 40px;
+    }
+
+    .bnav-menu li a {
+        color: #EDECEB;
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+        margin-top: 20px;
+        padding: 30px;
+    }
+
+    .bnav-menu li:nth-child(5) a {
+        font-size: 0.6rem;
+    }
+
+    /* footer */
+    footer {
+        margin-top: 140px;
+        padding: 20px;
+    }
+    
+    footer h4 {
+        display: none;
+    }
+    
+    small {
+        max-width: 300px;
+        width: 100%;
+        font-size: 0.7rem;
+        letter-spacing: 0.05rem;
+    }
+    
+    footer h4+ small {
+        height: 60px;
+        border: none;
+    }
+}
