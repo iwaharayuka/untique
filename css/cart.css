@@ -1,21 +1,9 @@
 @charset "UTF-8";
 
-/* animation */
-@keyframes animate{
-    0%{
-        background-position: left;
-    }
-    50%{
-        background-position: right;
-    }
-    100%{
-        background-position: right;
-    }
-}
-
 /* main */
 .shopping-cart {
-    width: 700px;
+    max-width: 1200px;
+    width: 50%;
     height: auto;
     background-color: #fff;
     margin: 0 auto;
@@ -65,11 +53,12 @@
 }
 
 .text {
-    width: 300px;
+    width: 40%;
     font-size: 0.8rem;
 }
 
 .price {
+    width: 30%;
     font-size: 0.9rem;
     font-family: 'Ovo', serif;
     text-align: right;
@@ -98,6 +87,7 @@
     font-size: 0.9rem;
     letter-spacing: 0.15rem;
     font-family: 'Noto Serif JP', serif;
+    margin-bottom: 240px;
 }
 
 .buy {
@@ -129,6 +119,7 @@
     .title {
         height: 80px;
         padding-top: 25px;
+        font-size: 0.6rem;
     }
 
     .item {

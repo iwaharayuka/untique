@@ -2,7 +2,6 @@ $(function(){
     // bnav
     $('.bnavbtn').on('click', function(){
         $('.bnav-menu').slideToggle(800);
-        console.log('yes');
     });
 
     // header固定
@@ -14,103 +13,69 @@ $(function(){
             $('nav').removeClass('nav-fixed');
         }
     });
+});
 
-    // カート機能
-    var gotocart = document.querySelectorAll('.gotocart'),
-    cart_cnt_icon = document.getElementById('js_cart_cnt'),
-    cart_cnt = 0,
+// カート機能
+// window.onload = function() {
+$(function(){
+    var imgdata = $('.gotocart').data('img'),
+    cnt = 0,
     clicked = [],
-    save_items = [],//ローカルストレージ保存用の配列
-    items = JSON.parse(localStorage.getItem("items"));//ローカルストレージの商品データ配列
-
-    if(items){
+    cartItems = [], // localstorage保存用の配列
+    iitems = JSON.parse(localStorage.getItem("items"));
+    
+    if(iitems) {
         var id;
-        for (var i = 0; i < items.length; i++) {
-          id = items[i].id;
-          save_items.push(items[i]);
-          clicked.push(id);
-          activate_btn(id);
+        for (var i = 0; i < iitems.length; i++) {
+        id = iitems[i].img;
+
+        cartItems.push(iitems[i]);
+        clicked.push(id);
+        // cnt_active(id);
         }
-        if(items.length != 0){
-          cart_cnt_icon.parentNode.classList.remove('hidden');
-          cart_cnt_icon.innerHTML = cart_cnt;
+        if(iitems.length != 0) {
+            cnt_active();
         }
     }
 
-    gotocart.forEach(function(cart_btn,index){
-        cart_btn.addEventListener('click', function(){
-            if(clicked.indexOf(index) >= 0){
-                //クリック管理用の配列から対象のボタンのindexを削除
-                for(var i = 0; i < clicked.length; i++){
-                    if(clicked[i] == index){
+    $('.gotocart').each(function(index) {
+        $(this).on('click', function() {
+            if (clicked.indexOf(index) >= 0) {
+                for (var i = 0; i < clicked.length; i++) {
+                  if(clicked[i] == index){
                     clicked.splice(i, 1);
-                    //データ保管ようの配列から対象の商品データを削除
-                    save_items.splice(i, 1);
-                    }
+                    cartItems.splice(i, 1);
+                  }
                 }
-                //カートアイコンの数を減らす
-                cart_cnt--;
-                //0の時はカートアイコンのカウントを表示させない
-                if(cart_cnt == 0){
-                    $('.cart_cnt').addClass('hidden');
-                }
-                $('#js_cart_cnt').html(cart_cnt);
-
-                //カートボタンを非アクティブにする
-                cart_btn.classList.remove('_active');
-                //ボタンのindexが配列に含まれていたら、配列から削除
-                for(var i = 0; i < clicked.length; i++){
-                    if(clicked[i] == index){
-                        clicked.splice(i, 1);
-                    }
-                }
-            }else if(clicked.indexOf(index) == -1){
-                var img = cart_btn.dataset.img;
-                var name = cart_btn.dataset.name;//商品の名前を取得
-                var price = Number(cart_btn.dataset.price);//商品の値段を取得
-                //データ保存用の配列に商品データを追加
-                save_items.push({
-                    id: index,
-                    img: img,
+                cnt_active(index);
+              }else if(clicked.indexOf(index) == -1){
+                clicked.push(imgdata);
+                var name = $(this).data('name'),
+                price = $(this).data('price');
+                cartItems.push({
+                    img: imgdata,
                     name: name,
                     price: price
                 });
-
-                //ボタンのindexが配列に含まれていなかったら、配列に追加
-                clicked.push(index);
-                cart_cnt++;
-                if(cart_cnt >= 1){
-                $('.cart_cnt').removeClass('hidden');
-                }
+                cnt_active(index);
+                $(this).addClass('_active');
             }
-            $('#js_cart_cnt').html(cart_cnt);
-            console.log(cart_cnt);
-            cart_btn.classList.add('_active');
-
-            // ローカルストレージに商品データを保管(上書き)
-            localStorage.setItem("items",JSON.stringify(save_items));
-        })
+            localStorage.setItem("items", JSON.stringify(cartItems));
+        });
     });
 
-    function activate_btn(index){
-        cart_cnt++;
-        if(cart_cnt >= 1){
-          cart_cnt_icon.parentNode.classList.remove('hidden');
-        }
-        cart_cnt_icon.innerHTML = cart_cnt;
-        gotocart[index].classList.add('_active');
-    }
-    
-    function inactivate_btn(index){
-        cart_cnt--;
-        if(cart_cnt == 0){
-          cart_cnt_icon.parentNode.classList.add('hidden');
-        }
-        cart_cnt_icon.innerHTML = cart_cnt;
-        gotocart[index].classList.remove('_active');
-    }
-});
+    function cnt_active() {
+        cnt++;
+        $('#js_cart_cnt').parent().removeClass('hidden');
+        $('#js_cart_cnt').html(cnt);
+    };
 
+    function cnt_inactive() {
+        cnt--;
+        $('#js_cart_cnt').parent().addClass('hidden');
+    };
+// };
+});
 
 // itemsArray
 function getItemsArray(){

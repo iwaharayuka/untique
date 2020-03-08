@@ -108,15 +108,17 @@ header {
 } */
 
 .fig-area {
-    width: 100vw;
+    max-width: 1200px;
+    width: 25%;
     height: calc(100vh - 80px);
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 figure img {
-    width: 400px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -125,6 +127,7 @@ figcaption {
     color: #887559;
     text-align: center;
     letter-spacing: 0.1rem;
+    line-height: 1.5rem;
 }
 
 .bnav {
@@ -264,7 +267,7 @@ main {
 }
 
 .about-block img {
-    width: 50%;
+    width: 45%;
 }
 
 .about-block .text {

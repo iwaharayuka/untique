@@ -4,7 +4,7 @@ $(function(){
             <nav> \
                 <ul class="nav-list"> \
                     <li class="icon"> \
-                        <a href=""><img src="img/icon_ig.svg" alt="ig"> \
+                        <a href="https://www.instagram.com/untique.grats.jp" target="_blank"><img src="img/icon_ig.svg" alt="ig"> \
                         </a> \
                     </li> \
                     <li class="nav"> \

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@keyframes animate{
+@keyframes like{
     0%{
         background-position: left;
     }
@@ -31,6 +31,7 @@ main {
 /* item-block */
 .item-block {
     width: 50%;
+    cursor: pointer
 }
 
 /* item-block-img */
@@ -43,7 +44,7 @@ main {
 
 .item-block-img img {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 }
 
 .loupe {
@@ -53,6 +54,7 @@ main {
     -moz-border-radius: 150px;
     -webkit-border-radius: 100px;
     border-radius: 150px;
+    cursor: pointer
 }
 
 /* item-block-sub */
@@ -145,7 +147,7 @@ main {
 }
 
 .is-active {
-    animation-name: animate;
+    animation-name: like;
     animation-duration: .8s;
     animation-iteration-count: 1;
     animation-timing-function: steps(28);
@@ -199,13 +201,8 @@ main {
     color: #887559;
 }
 
-
 ._active {
     opacity: 0.5 !important;
-}
-
-footer {
-    bottom: 0;
 }
 
 /* スマホ */
@@ -283,15 +280,25 @@ footer {
     }
 
     /* price-area */
-    /* price-area */
     .price-area {
         width: 100%;
         margin-top: 60px;
         margin-bottom: 40px;
     }
 
+    .price-area .price {
+        font-size: 1rem;
+    }
+
     .price-area .tax {
         margin-left: 10px;
+    }
+
+    .like-btn {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        margin-left: 5px;
     }
 
     /* btn-area */
