@@ -224,19 +224,16 @@ footer h4:hover {
 @media screen and ( max-width: 560px ) {
     /* common */
     .second-ttl {
-        padding-top: 140px;
         font-size: 1.8rem;
-    }
-
-    .sub-ttl {
-        margin-top: 10px;
-        margin-bottom: 80px;
-        font-size: 0.8rem;
+        padding-top: 140px;
+        letter-spacing: 0.2rem;
     }
 
     p {
         font-size: 1rem;
-        line-height: 2rem;
+        line-height: 2.4rem;
+        letter-spacing: normal;
+        text-align: justify;
     }
 
     /* header */

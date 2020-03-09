@@ -41,10 +41,11 @@
 }
 
 .del-btn {
-    width: 16px;
-    height: 16px;
+    width: 26px;
+    height: 26px;
     cursor: pointer;
     background: url(../img/icon_del-btn.svg) no-repeat center;
+    padding: 5px;
 }
 
 .thumb img {
