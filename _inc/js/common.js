@@ -1,12 +1,16 @@
 $(function(){
     // bnav
-    $('.bnavbtn').on('click', function(){
-        $('.bnav-menu').slideToggle(800);
+    $('.bnavbtn').on('click', function() {
+        $('.bnav-menu-wrapper').slideToggle(800);
+    });
+
+    $('.bnav-menu a').on('click', function() {
+        $('.bnavbtn').click();
     });
 
     // header固定
     var navPos = $(window).height() - 80;
-    $(window).scroll(function(){
+    $(window).scroll( function() {
         if($(this).scrollTop() > navPos) {
             $('nav').addClass('nav-fixed');
         } else {

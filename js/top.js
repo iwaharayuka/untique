@@ -14,7 +14,7 @@ $(function(){
   };
 
   // 要素までスクロールダウン
-  $('a[href ^= "#"]').click(function(){
+  $('a[href ^= "#"]').on('click', function(){
     event.preventDefault();
     var target = $(this.hash);
     if(!target.length) return;

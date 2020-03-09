@@ -187,7 +187,7 @@ footer {
 }
 
 footer h4 {
-    width: 20vw;
+    width: 20%;
     color: #887559;
     display: flex;
     justify-content: center;
@@ -196,7 +196,7 @@ footer h4 {
 }
 
 small {
-    width: 60vw;
+    width: 60%;
     color: #887559;
     font-family: 'Ovo' , serif;
     font-size: 0.9rem;
@@ -252,18 +252,17 @@ footer h4:hover {
     
     /* bnav */
     .bnav {
-        width: 100%;
+        width: 100vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 0 13px;
         position: relative;
     }
 
     .bnav h1 {
         width: calc(100vw - 160px);
-        height: 70px;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -272,7 +271,7 @@ footer h4:hover {
     }
 
     .bnav .cart-wrapper {
-        width: 30px;
+        width: 34px;
         position: relative;
     }
     
@@ -291,23 +290,29 @@ footer h4:hover {
     }
 
     .bnav .bnavbtn img, .bnav .cart-wrapper img {
-        width: 40px;
+        width: 34px;
     }
 
-    .bnav-menu {
+    .bnav-menu-wrapper {
         width: 100vw;
         height: calc(100vh - 80px);
         background: #181818;
-        opacity: 0.85;
+        opacity: 0.9;
         position: absolute;
         top: 80px;
-        padding-top: 80px;
         display: none;
+    }
+
+    .bnav-menu {
+        width: 100%;
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     .bnav-menu li {
         text-align: center;
-        padding: 40px;
     }
 
     .bnav-menu li a {
@@ -318,7 +323,7 @@ footer h4:hover {
         padding: 30px;
     }
 
-    .bnav-menu li:nth-child(5) a {
+    .bnav-menu li:nth-child(6) a {
         font-size: 0.6rem;
     }
 
@@ -333,9 +338,8 @@ footer h4:hover {
     }
     
     small {
-        font-size: 0.7rem;
+        font-size: 3vmin;
         letter-spacing: 0.05rem;
-        max-width: 300px;
         width: 100%;
     }
     
