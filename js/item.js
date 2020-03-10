@@ -28,6 +28,7 @@ $(function() {
         $('.loupe img').attr('src', img_name);
     });
 
+    // お気に入りボタン
     $('.like-btn').on('click', function(){
         $(this).toggleClass('is-active');
     });

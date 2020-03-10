@@ -10,7 +10,7 @@ $(function(){
 
     // header固定
     var navPos = $(window).height() - 80;
-    $(window).scroll( function() {
+    $(window).scroll(function() {
         if($(this).scrollTop() > navPos) {
             $('nav').addClass('nav-fixed');
         } else {

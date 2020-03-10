@@ -4,7 +4,7 @@ $(function(){
 
     // 商品を追加して並べる
     for(var i = 0; i < itemsArray.length; i++){
-        var htmlContents = '<div class="item-block"><a href="item' + itemsArray[i]['no'] + '.html"><img src="img/' + itemsArray[i]['img1'] + '" alt=""></a><div class="item-box"><h4>' + '「' + itemsArray[i]['title'] + '」' + '<br>' + itemsArray[i]['artist'] + '<br>' + '（ ' + itemsArray[i]['year'] + '年 ）' + '</h4><br><p>' + '¥' + itemsArray[i]['price'].toLocaleString() + '</p></div></div>'
+        var htmlContents = '<div class="item-block"><a href="item' + itemsArray[i]['no'] + '.html"><img src="img/' + itemsArray[i]['img1'] + '" alt=""></a><div class="item-box"><h4>' + '『' + itemsArray[i]['title'] + '』' + '<br>' + itemsArray[i]['artist'] + '<br>' + '（ ' + itemsArray[i]['year'] + '年 ）' + '</h4><br><p>' + '¥' + itemsArray[i]['price'].toLocaleString() + '</p></div></div>'
         $('#item-container').prepend(htmlContents);
     }
 
@@ -94,7 +94,7 @@ $(function(){
                             <img src="img/' + sortArray[i]['img1'] + '"> \
                         </a> \
                     <div class="item-box"> \
-                        <h4>' + '「' + sortArray[i]['title'] + '」' + '<br>' + sortArray[i]['artist'] + '<br>' + '（ ' + sortArray[i]['year'] + '年 ）' + '</h4><br><p>' + '¥' + sortArray[i]['price'].toLocaleString() + '</p> \
+                        <h4>' + '『' + sortArray[i]['title'] + '』' + '<br>' + sortArray[i]['artist'] + '<br>' + '（ ' + sortArray[i]['year'] + '年 ）' + '</h4><br><p>' + '¥' + sortArray[i]['price'].toLocaleString() + '</p> \
                     </div></div>';
                 $('#item-container').prepend(htmlCont);
             };
