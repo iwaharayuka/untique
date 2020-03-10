@@ -50,6 +50,7 @@
     font-size: 0.9rem;
     letter-spacing: 0.15rem;
     font-family: 'Noto Serif JP', serif;
+    border-radius: 1px;
 }
 
 .btn-area .send {
