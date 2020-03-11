@@ -256,13 +256,17 @@ main {
     /* item-ttl */
     .item-ttl {
         width: 100%;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     /* item-caption */
     .item-caption {
         width: 100%;
         margin-top: 20px;
+        font-size: 1rem;
+        line-height: 2.4rem;
+        letter-spacing: normal;
+        text-align: justify;
     }
 
     /* item-caption--spec-container */
@@ -272,7 +276,7 @@ main {
     } 
 
     .item-caption--spec-container h4 {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         letter-spacing: 0.1rem;
     } 
 
@@ -288,7 +292,7 @@ main {
     }
 
     .price-area .price {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .price-area .tax {
