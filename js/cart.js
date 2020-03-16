@@ -44,22 +44,27 @@ $(function(){
 
     $('.del-btn').on('click', function(){
         // confirm('カートから削除します');
-        // var iitems = JSON.parse(localStorage.getItem("items"));
-        // var delItem = $(this).parent().find('img').attr('src');
-        // var delID = delItem.match(/\d+/);
-        // var index = '';
-        // for (var i=0; i<iitems.length; i++) {
-        //     console.log(iitems[i]['img']);
-        //     if (iitems[i].img == delID) {
-        //         index = i;
-        //     }
-        // }
-        // if (index != '') {
-        //     iitems.splice(index, 1);
-        //     localStorage.setItem("items", JSON.stringify(iitems));
-        // }
+        var iitems = JSON.parse(localStorage.getItem("items"));
+        var delItem = $(this).parent().find('img').attr('src');
+        var delID = delItem.match(/\d+/)[0];
+        var index = -1;
+        for (var i=0; i<iitems.length; i++) {
+            if (iitems[i].img == delID) {
+                index = i;
+            }
+        }
 
-        // localStorage.clear();
-        // $(this).parent('li').toggleClass('is-del');
+        if (index > -1) {
+            iitems.splice(index, 1);
+            localStorage.setItem("items", JSON.stringify(iitems));
+            // カートアイコンの数字更新
+            cnt_active(iitems.length);
+            // カートに入っているアイテム一覧から削除
+            $('img[src="img/uq-'+delID+'.png"]').parents('.item').remove();
+        }
     });
+    function cnt_active(cnt) {
+        $('.cart_cnt').removeClass('hidden');
+        $('.cart_cnt span').html(cnt);
+    };
 })

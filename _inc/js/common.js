@@ -1,7 +1,15 @@
 $(function(){
+
     // bnav
     $('.bnavbtn').on('click', function() {
         $('.bnav-menu-wrapper').slideToggle(800);
+        $(this).toggleClass('open');
+        if ($(this).hasClass('open')) {
+            $(this).children('img').attr('src', 'img/nav2.svg');
+        }else {
+            $(this).children('img').attr('src', 'img/nav.svg');
+        }
+        return false;
     });
 
     $('.bnav-menu a').on('click', function() {
@@ -17,11 +25,8 @@ $(function(){
             $('nav').removeClass('nav-fixed');
         }
     });
-});
 
-// カート機能
-// window.onload = function() {
-$(function(){
+    // カート機能
     var imgdata = $('.gotocart').data('img'),
     cnt = 0,
     clicked = [],
@@ -38,47 +43,63 @@ $(function(){
         // cnt_active(id);
         }
         if(iitems.length != 0) {
-            cnt_active();
+            cnt_active(clicked.length);
         }
     }
 
     $('.gotocart').each(function(index) {
         $(this).on('click', function() {
-            if (clicked.indexOf(index) >= 0) {
-                for (var i = 0; i < clicked.length; i++) {
-                  if(clicked[i] == index){
-                    clicked.splice(i, 1);
-                    cartItems.splice(i, 1);
-                  }
+            // この商品がすでにローカルストレージに保存されているか
+            var checkedThis = false;
+            iitems = JSON.parse(localStorage.getItem("items"));
+            // iitemsがローカルストレージに存在しているとき
+            if (iitems) {
+                for (var i = 0; i < iitems.length; i++) {
+                    if (iitems[i].img == imgdata) {
+                        checkedThis = true;
+                    }
                 }
-                cnt_active(index);
-              }else if(clicked.indexOf(index) == -1){
-                clicked.push(imgdata);
-                var name = $(this).data('name'),
-                price = $(this).data('price');
-                cartItems.push({
-                    img: imgdata,
-                    name: name,
-                    price: price
-                });
-                cnt_active(index);
-                $(this).addClass('_active');
             }
-            localStorage.setItem("items", JSON.stringify(cartItems));
+            if (!checkedThis) {
+                // ローカルストレージに保存されていない場合のみ追加
+                if (clicked.indexOf(index) >= 0) {
+                    for (var i = 0; i < clicked.length; i++) {
+                    if(clicked[i] == index){
+                        clicked.splice(i, 1);
+                        cartItems.splice(i, 1);
+                    }
+                    }
+                    // cnt_active(clicked.length);
+                }else if(clicked.indexOf(index) == -1){
+                    clicked.push(imgdata);
+                    var name = $(this).data('name'),
+                    price = $(this).data('price');
+                    cartItems.push({
+                        img: imgdata,
+                        name: name,
+                        price: price
+                    });
+                    // カートの数字を更新
+                    cnt_active(clicked.length);
+                    $(this).addClass('_active');
+                }
+                localStorage.setItem("items", JSON.stringify(cartItems));
+            }
         });
     });
 
-    function cnt_active() {
-        cnt++;
-        $('#js_cart_cnt').parent().removeClass('hidden');
-        $('#js_cart_cnt').html(cnt);
+    function cnt_active(cnt) {
+        // cnt++;
+        // $('#js_cart_cnt').parent().removeClass('hidden');
+        // $('#js_cart_cnt').html(cnt);
+        $('.cart_cnt').removeClass('hidden');
+        $('.cart_cnt span').html(cnt);
     };
 
     function cnt_inactive() {
         cnt--;
         $('#js_cart_cnt').parent().addClass('hidden');
     };
-// };
 });
 
 // itemsArray

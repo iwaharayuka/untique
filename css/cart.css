@@ -7,7 +7,7 @@
     height: auto;
     background-color: #fff;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 280px;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@
     background-color: #887559;
     color: #EDECEB;
     transition: .4s;
-    margin-bottom: 240px;
+    margin-bottom: 160px;
 }
 
 .return-store {
