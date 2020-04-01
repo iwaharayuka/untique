@@ -234,6 +234,7 @@ main {
 
     .item-block-img img {
         width: 80%;
+        margin-bottom: 20px;
     }
 
     /* item-block-sub */
@@ -257,7 +258,7 @@ main {
     /* item-ttl */
     .item-ttl {
         width: 100%;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     /* item-caption */

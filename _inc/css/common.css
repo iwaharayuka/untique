@@ -229,6 +229,11 @@ footer h4:hover {
         letter-spacing: 0.2rem;
     }
 
+    .sub-ttl {
+        margin-bottom: 40px;
+        margin-top: 1rem;
+    }
+
     p {
         font-size: 1rem;
         line-height: 2.4rem;

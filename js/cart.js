@@ -40,13 +40,14 @@ $(function(){
     }
     // 作成した要素の追加
     ele.appendChild(fragment);
-    total_ele.innerHTML = total;
+    total_ele.innerHTML = total.toLocaleString();
 
     $('.del-btn').on('click', function(){
-        // confirm('カートから削除します');
         var iitems = JSON.parse(localStorage.getItem("items"));
         var delItem = $(this).parent().find('img').attr('src');
         var delID = delItem.match(/\d+/)[0];
+        var delPrice = $(this).parent().find('.price').text();
+        var delNum = delPrice.replace(/[^0-9]/g, '');
         var index = -1;
         for (var i=0; i<iitems.length; i++) {
             if (iitems[i].img == delID) {
@@ -61,7 +62,10 @@ $(function(){
             cnt_active(iitems.length);
             // カートに入っているアイテム一覧から削除
             $('img[src="img/uq-'+delID+'.png"]').parents('.item').remove();
+            // 合計金額を減算
+            total -= delNum;
         }
+        total_ele.innerHTML = total.toLocaleString();
     });
     function cnt_active(cnt) {
         $('.cart_cnt').removeClass('hidden');

@@ -66,6 +66,20 @@
     color: #887559;
 }
 
+.sendmsg {
+    margin: 0 auto;
+    width: 500px;
+    height: calc(100vh - 160px);
+    color: #887559;
+    text-align: center;
+}
+
+.errmsg {
+    color: #900;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+}
+
 /* スマホ */
 @media screen and ( max-width: 560px ) {
     main {

@@ -111,8 +111,7 @@ img[src="img/uq-01201.png"], img[src="img/uq-01101.png"] {
     .tab-container {
         width: 100%;
         height: 80px;
-        padding: 20px;
-        padding-top: 0;
+        padding: 15px;
     }
 
     .tab-container .tab {

@@ -270,6 +270,7 @@ main {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    padding: 2%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -305,6 +306,7 @@ main {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    padding: 2%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -442,6 +444,11 @@ footer h4:hover {
         font-size: 1.8rem;
         padding-top: 140px;
         letter-spacing: 0.2rem;
+    }
+
+    .sub-ttl {
+        margin-bottom: 40px;
+        margin-top: 1rem;
     }
 
     p {
@@ -596,6 +603,7 @@ footer h4:hover {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding: 0;
     }
     
     .exhibision-block {
