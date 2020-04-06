@@ -25,16 +25,13 @@
             <p></p>
             <form action="confirm.php" method="post" name="form">
                 <input type="text" placeholder="お名前" class="name" name="name">
-                <input type="email" placeholder="E-mail" class="mail" name="mail">
+                <input type="text" placeholder="E-mail" class="mail" name="mail">
                 <textarea class="textbox" placeholder="お問い合わせ内容をご記入ください。" name="textbox"></textarea>
+                <div class="btn-area">
+                    <input type="button" value="確認画面へ" onclick="check_contactform()" class="btn send">
+                </div>
             </form>
         </div>
-        <div class="btn-area">
-            <input type="button" value="確認する" onclick="check_contactform()" class="btn send">
-        </div>
-        <span class="sendmsg">
-            <?=$massage?>
-        </span>
     </main>
     <div class="footer">
         <!-- footer読み込み -->

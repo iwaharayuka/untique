@@ -66,18 +66,20 @@
     color: #887559;
 }
 
+.errmsg {
+    color: #f00;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
 .sendmsg {
     margin: 0 auto;
     width: 500px;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 560px);
     color: #887559;
     text-align: center;
-}
-
-.errmsg {
-    color: #900;
-    font-size: 0.9rem;
     letter-spacing: 0.1rem;
+    margin-top: 240px;
 }
 
 /* スマホ */
@@ -92,5 +94,9 @@
 
     .form-container p {
         font-size: 0.8rem;
+    }
+
+    .sendmsg {
+        width: 100%;
     }
 }

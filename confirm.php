@@ -1,3 +1,9 @@
+<?php
+    $name = $_POST['name'];
+    $mail = $_POST['mail'];
+    $textbox = $_POST['textbox'];
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -13,28 +19,23 @@
     <link rel="icon" type="image/png" href="/img/android-chrome-256x256.png">
 </head>
 <body>
-    <?php
-        $name = $_POST['name'];
-        $mail = $_POST['mail'];
-        $textbox = $_POST['textbox'];
-    ?>
     <header>
         <div class="header">
             <!-- header -->
         </div>
     </header>
     <main>
-        <h2 class="second-ttl">CONTACT</h2>
-        <h3 class="sub-ttl">お問い合わせ</h3>
+        <h2 class="second-ttl">CONFIRM</h2>
+        <h3 class="sub-ttl">送信内容をご確認ください</h3>
         <div class="form-container">
-            <form action="confirm.php" method="post" name="form">
-                <input type="text" placeholder="お名前" class="name" name="name" readonly="readonly">
-                <input type="email" placeholder="E-mail" class="mail" name="mail" readonly="readonly">
-                <textarea class="textbox" placeholder="お問い合わせ内容をご記入ください。" name="textbox" readonly="readonly"></textarea>
+            <form action="submit.php" method="post" name="form">
+                <input type="text" class="name" name="name" value="<?=$name?>" readonly="readonly" style="border: solid 1px #887559; background: #edeceb; color: #887559;">
+                <input type="text" class="mail" name="mail" value="<?=$mail?>" readonly="readonly" style="border: solid 1px #887559; background: #edeceb; color: #887559;">
+                <textarea class="textbox" name="textbox" readonly="readonly" style="border: solid 1px #887559; background: #edeceb; color: #887559;"><?=$textbox?></textarea>
+                <div class="btn-area">
+                    <input type="submit" class="btn send" value="送信する">
+                </div>
             </form>
-        </div>
-        <div class="btn-area">
-            <input type="submit" class="btn send" value="送信する">
         </div>
     </main>
     <div class="footer">
