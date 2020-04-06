@@ -5,24 +5,24 @@
         $textbox = $_POST['textbox'];
 
          //メールの内容
-        $body .= "お問い合わせありがとうございます。下記の情報を受け取りました。\nこちらから折り返しご連絡させていただきます。\n\n";
-        $body .= "お名前:".$name."\n";
-        $body .= "メールアドレス:".$mail."\n";
-        $body .= "お問い合わせ内容:\n".$textbox."\n\n";
-        $body .= "ーーーーーーーーーーーーーーーーーーーー\n";
-        $body .= "UNTIQUE\n";
-        $body .= "Mail: tegami@untique.grats.jp\n";
-        $body .= "URL: https://untique.grats.jp/\n";
-        $body .= "ーーーーーーーーーーーーーーーーーーーー\n";
+        $body .= "この度は、UNTIQUEにお問合わせいただき誠にありがとうございます。 以下の内容でお問合わせ内容を送信しました。\n3営業日以内に、折り返しご連絡させていただきます。\n※こちらのメールにお心当たりのない場合、お手数ですがご連絡いただけますと幸いです。\n\n\n";
+        $body .= "お名前:  ".$name."\n";
+        $body .= "メールアドレス:  ".$mail."\n";
+        $body .= "お問い合わせ内容:  \n".$textbox."\n\n\n";
+        $body .= "───────────────────\n";
+        $body .= "UNTIQUE\n\n";
+        $body .= "Mail:  tegami@untique.grats.jp\n";
+        $body .= "URL:  https://untique.grats.jp/\n";
+        $body .= "───────────────────\n";
 
          //メールの送り先,メールの送り元,メールタイトル
         $flg = bSENDMAIL3($mail,"tegami@untique.grats.jp","【UNTIQUE】お問い合わせありがとうございます",$body);
         $flg = bSENDMAIL3("tegami@untique.grats.jp","tegami@untique.grats.jp","【UNTIQUE】お問い合わせありがとうございます",$body);
 
         if($flg == true) {
-            $message = "メールの送信が完了しました。<br>ご記入いただいたメールアドレスに確認メールをお送りしています。<br>お問い合わせいただきありがとうございました。";
+            $message = "お問い合わせ内容の送信が完了しました。<br>確認メールをお送りしています。<br>お問い合わせありがとうございました。";
         } else {
-            $message = "メールの送信に失敗しました。<br>大変お手数ですが、もう一度やり直して下さい。";
+            $message = "お問い合わせ内用の送信に失敗しました。<br>大変お手数ですが、もう一度やり直して下さい。";
         }
     }
 
